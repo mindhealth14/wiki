@@ -1,0 +1,24 @@
+{% extends 'encyclopedia/layout.html' %}
+
+
+{% block title %}
+    Edit Page
+{% endblock title %}
+    
+
+
+{% block body %}
+<a href="{% url 'index' %}">&#x2190; Back</a>
+<hr>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Save Changes">
+    </form>
+</div>
+
+
+
+{% endblock body %}
+     

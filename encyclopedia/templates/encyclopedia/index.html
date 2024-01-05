@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+   <div class="row">
+    <div class="col-md-10">
+        <h1>All Pages</h1>
+
+    <ul class="list-group mt-5">
+        {% for entry in entries %}
+            <li class="list-group-item d-flex justify-content-between ">
+                <a href="{% url 'title' title=entry %}">{{ entry }}</a>
+                <a class="text-danger" href="{% url 'delete' title=entry %}"><i class="fa-solid fa-trash"></i></a> 
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+
+   
+   </div>
+
+{% endblock %}

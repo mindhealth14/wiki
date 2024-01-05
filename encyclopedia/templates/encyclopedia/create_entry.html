@@ -1,0 +1,30 @@
+{% extends 'encyclopedia/layout.html' %}
+
+
+{% block title %}
+    Create New Entries 
+{% endblock title %}
+    
+
+
+{% block body %}
+    <h1>Create New Page</h1><hr>
+        <div class="form-group" >
+            <form method="post" accept="">
+                {% csrf_token %}
+                <label class="mt-5">{{ form.title.label }}: </label>
+                <span class="form-group">{{ form.title }} </span>
+                
+                <label class="mt-3" >{{ form.content.label }}:</label>
+                <span class="form-group"> {{ form.content }} </span>
+                   
+              <div class="d-flex flex-row ">
+                <input class="btn btn-primary mt-4 m-btn " type="submit"  style="width: 200px;">
+                <input class="btn btn-danger mt-4  mx-2" type="reset" value="Reset" style="width: 200px;">
+              
+              </div>
+         
+            </form>
+        </div>
+{% endblock body %}
+    

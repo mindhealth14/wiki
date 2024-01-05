@@ -1,0 +1,20 @@
+{% extends 'encyclopedia/layout.html' %}
+{% load static %}
+
+
+{% block title %}
+    Page Not Found
+{% endblock title %}
+    
+
+
+{% block body %}
+    <h1>Page Not Found</h1>
+    <hr>
+    <span> Your search: <strong> {{ query }} </strong> not found </span>
+    <div class="offset-2">
+        
+    <img class="mt-5 rounded img-thumbnail" src="{% static "images/road-4.jpg" %}" alt="Image Description" width="550px" >
+    </div>
+{% endblock body %}
+    

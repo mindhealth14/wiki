@@ -1,0 +1,33 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+    
+
+{% block nav %}
+    <h1>What is in here</h1>
+{% endblock nav %}
+    
+
+
+{% block body %}
+
+<div class="col-md-9">
+    <div class="mx-5">
+        <div class="my-3 d-flex justify-content-between" >
+            <a href="{% url 'editpage' title=title %}"><button class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></button> 
+            </a> <a href="{% url 'delete' title=title %}"><button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></a>
+        </div>
+    
+           <hr>
+    
+    
+        <h1>{{ title }}</h1>
+    
+        <span class="my-4">{{ entry_content|safe }}</span>
+    </div>
+    <a href="{% url 'index' %}">&#x2190; Back</a>
+</div>
+{% endblock body %}
+    
